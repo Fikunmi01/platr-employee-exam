@@ -1,0 +1,49 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.black-bg {
+	background-color: black;
+}
+
+// Improve this style sheet so it's more compact and easily updatable in the future
+
+ol li {
+	list-style: inside;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td,
+th {
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	border: 1px solid #dddddd;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+tr td:first-child {
+	border-left: 1px solid #dddddd;
+}
+
+tr td:last-child {
+	border-right: 1px solid #dddddd;
+}
+
+.data-na {
+	background-color: orange;
+}

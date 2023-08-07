@@ -1,0 +1,86 @@
+<div id="assignment-four">
+	<!--
+	Assignment 4 - Employee management page
+
+	You have been assigned to create a page to manage employees. This page contains a table of employees similar to the
+	one found in assignment-one with one extra column to delete a given employee record. Below the table is a form using
+	which the user can add new employees (when an employee is added, the table must immediately reflect the change). The
+	job of storing, adding, and deleting employees happens in the assignment-four.service.ts, this page can only call
+	the functions in the service, but not modify the array directly.
+
+	Your tasks are:
+	1. Create a table of employees to list all the employees found in AssignmentFourService.employees array
+	2. Add ability to delete selected employee (delete by providing the id of the employee)
+	3. Add form to add new employee
+
+	Don't forget: the direct manipulation of employees array can only happen in the service. This page can only call
+	relevant function to either get, add, or remove employees.
+	-->
+
+	<!-- Employees table -->
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>First Name</th>
+			<th>
+				Last Name</th>
+			<th>Date of Birth</th>
+			<th>Role</th>
+			<th>Notes</th>
+		</tr>
+		<tr *ngFor="let employee of employees; let i =index">
+			<td>{{employee.id}}</td>
+			<td>{{employee.firstName}}</td>
+			<td>{{employee.lastName}}</td>
+			<td>{{employee.dob}}</td>
+			<td>{{employee.role}}</td>
+			<td>{{employee.notes}}</td>
+			<button (click)="deleteItem(i)">Delete</button>
+
+		</tr>
+	</table>
+	<!-- Form to add new employee -->
+
+	<div class=" relative  mx-auto mt-10">
+		<h2 class="text-center pb-10 text-3xl">
+			Employee form
+		</h2>
+		<form class="" [formGroup]="form">
+			<span class="flex gap-10 mb-3">
+				<label for="firstName" class="w-32">First Name</label>
+				<input type="text" class="border-2 outline-none" formControlName="firstName" name="firstName" id="">
+			</span>
+
+			<span class="flex gap-10 mb-3">
+				<label for="lastName" class="w-32">Last Name</label>
+				<input type="text" class="border-2 outline-none" formControlName="lastName" name="lastName" id="">
+				<br>
+
+			</span>
+			<span class="flex gap-10 mb-3">
+				<label for="lastName" class="w-32">Date of Birth</label>
+				<input type="text" name="lastName" class="border-2 outline-none" formControlName="dob" id="">
+				<br>
+			</span>
+
+
+			<span class="flex gap-10 mb-3">
+				<label for="lastName" class="w-32">Role</label>
+				<input type="text" name="lastName" class="border-2 outline-none" formControlName="roles" id="">
+				<br>
+
+			</span>
+
+			<span class="flex gap-10 mb-3">
+				<label for="lastName" class="w-32">Notes</label>
+				<input type="text" name="notes" class="border-2 outline-none" formControlName="notes" id="">
+				<br>
+
+			</span>
+			<button (click)="addNewData()" class="bg-[#eb2188] px-3 py-2 rounded-xl"
+				[disabled]="form.invalid">Submit</button>
+
+		</form>
+	</div>
+
+</div>

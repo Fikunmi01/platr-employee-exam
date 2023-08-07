@@ -1,0 +1,34 @@
+<div id="assignment-one">
+	<!--
+	Assignment 1 - Basic optimizations
+
+	This page contains a table with employees. The employee has an optional of 'notes' which the table accounts for.
+	Your tasks are:
+
+	1. Simplify the table so all of the logic for a given table data fits on one row.
+	2. Dynamically assign .data-na CSS class to role cell if value is 'N/A'.
+	3. Make table all the text in the table start with a capital letter (so 'bob' -> 'Bob').
+	4. Clean up and refactor the code where necessary in both HTML and CSS files.
+
+	For this assignment you don't need to manipulate the employees interface nor the input data.
+	-->
+
+	<table>
+		<tr>
+			<th>First Name</th>
+			<th>
+				Last Name</th>
+			<th>Date of Birth</th>
+			<th>Role</th>
+			<th>Notes</th>
+		</tr>
+		<tr *ngFor="let employee of employees">
+			<td>{{employee.firstName}}</td>
+			<td>{{employee.lastName}}</td>
+			<td>{{employee.dob}}</td>
+			<td [class.data-na]="employee.role === 'n/a'">{{employee.role}}</td>
+			<td *ngIf="employee.notes">{{employee.notes}}</td>
+			<td *ngIf="!employee.notes">-</td>
+		</tr>
+	</table>
+</div>

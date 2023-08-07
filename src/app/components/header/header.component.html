@@ -1,0 +1,5 @@
+<div id="header">
+	<ol>
+		<li *ngFor="let page of pages" [routerLink]="page.route">{{page.title}}</li>
+	</ol>
+</div>

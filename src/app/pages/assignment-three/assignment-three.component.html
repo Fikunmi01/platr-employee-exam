@@ -1,0 +1,27 @@
+<div id="assignment-three">
+	<!--
+	Assignment 3 - Path variables and query parameters
+
+	Situation: application uses userId while the user is browsing and additional query parameters to pre-configure
+	data on screen while the user is navigating the application. The page must be able to read the userId to properly
+	determine who we are dealing with as well as additional optional query parameters for additional settings on the
+	page. The userId as well are query parameters are displayed on screen.
+
+	Your tasks are:
+	1. Get the userId from the path variable and update `userId` variable with that value
+	2. Get all query parameters (key-value pairs) and put them into the table using an *ngFor loop to generate the rows
+	3. Update the table style sheet to look same as the one in assignment-one. Make sure to make the style globally reusable
+	-->
+
+	<h1>User id: {{userId}}</h1>
+	<table>
+		<tr>
+			<th>Query parameter</th>
+			<th>Value</th>
+		</tr>
+		<tr *ngFor="let param of queryParams">
+			<td>{{param.key}}</td>
+			<td>{{param.value}}</td>
+		</tr>
+	</table>
+</div>

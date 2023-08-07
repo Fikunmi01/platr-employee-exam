@@ -1,0 +1,27 @@
+<div id="assignment-two">
+	<!--
+	Assignment 2 - Child components with data
+
+	Your task is to work with a component called "Foo" that is responsible for taking in a color value and providing an
+	output event when the color has been changed. The "Foo" component should also allow data projection from the parent
+	component using Angular's content projection (see <h2> element), enabling manipulation of the projected data (hence
+	the color input). The component comes with an 'Update text color' button, which will trigger the emitter event, the
+	output of which should be logged in the assignment-two.component.ts.
+
+	Your tasks are:
+	1. Update Foo component to take in 'color' input for the initial color value, but with a default of '#ffffff'
+	2. Update Foo component to provide an event emitter, which will emit the color that has been chosen for the background
+	3. Add a new function in assignment-two.component.ts that will log the emitted value to console
+	-->
+
+	<h1>This heading is in the parent component </h1>
+	<app-foo (myData)="childData($event)">
+		<h2 [style.color]="selectedColor">
+			This heading is projected into the Foo component
+		</h2>
+		<!-- 2 Color chosen for background -->
+		<h2 [style.backgroundColor]="selectedColor">
+			This heading is projected into the Foo component
+		</h2>
+	</app-foo>
+</div>

@@ -1,0 +1,11 @@
+<div class="foo">
+	<!-- Projected value should be on this line -->
+	<ng-content></ng-content>
+
+	<select name="selectedColor" (change)="onColorSelect($event)">
+		<option *ngFor="let color of colors" [value]="color">{{ color }}</option>
+	</select>
+
+	<button (click)="textChange()">Update text color</button>
+
+</div>
